@@ -1,0 +1,86 @@
+// Setup wheel colors
+
+$frameColor: #fff;
+$winIndicatorColor: #fff;
+$middleColor: #fff;
+$redColor: #ba4d4e; // D57E7E
+$blueColor: #1592e8; // 1572A1
+$greenColor: #14c187;// C0D8C0
+$orangeColor: #fc7800;  // FFC286
+$purpleColor: #9925be; // EFDAD7
+$yellowColor: #dcd80a;
+
+$colors: 
+  $redColor     //sector 1 color
+  $orangeColor    //sector 2 color
+  $greenColor     //sector 3 color
+  $blueColor     //sector 4 color
+  $redColor    //sector 5 color
+  $orangeColor     //sector 6 color
+  $greenColor    //sector 7 color
+  $blueColor     //sector 8 color
+  $redColor    //sector 9 color
+  $orangeColor     //sector 10 color
+  $greenColor    //sector 11 color
+  $blueColor;    //sector 12 color
+
+@mixin setColor($n){
+  fill: nth($colors, $n);
+}
+
+@for $i from 1 through 12 {
+  #_#{$i} {
+    @include setColor($i);
+  }
+}
+
+.frame, .sticks {
+  fill: $frameColor;
+}
+
+.winIndicator{
+  fill: $winIndicatorColor;
+}
+
+.wheelMiddle {
+  fill: $middleColor;
+}
+
+// Body
+
+body {
+  text-align: center;
+  margin: auto;
+  background-color: $yellowColor; //#3ba1c, #59AD0EC
+  //background-image: linear-gradient(to bottom,$yellowColor, #9c9908 );
+}
+
+.luckywheel {
+  margin: 40px auto;
+  width: 50%;
+  height: 50%;
+}
+
+// Buttons
+
+.btn,
+.btn:visited{
+  font-weight: 800;
+  margin: 10px;
+  height: 40px;
+  width: 140px;
+  box-shadow: 4px 4px 20px 0 #cc4c45;
+  border-radius: 0;
+  border: 2px solid #000;
+  background-color: #fff;
+  color: #000;
+}
+
+.btn:hover,
+.btn:active {
+  color: #fff;
+  background-color: #000;
+  border: none;
+  text-decoration: none;
+  box-shadow: 4px 4px 5px 0 #cc4c45;
+}
